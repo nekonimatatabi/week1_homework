@@ -53,24 +53,14 @@
         <!-- スキル：カードをクリックすると詳細が開く -->
         <section id="skills" class="section">
             <h2>スキル</h2>
-            <div class="skill-list">
-                <div class="skill-card">
-                    <h3>HTML</h3>
-                    <p class="skill-detail">セマンティックタグを意識してページの構造を組み立てられます。</p>
-                </div>
-                <div class="skill-card">
-                    <h3>CSS</h3>
-                    <p class="skill-detail">Flexbox を使ったレイアウトとレスポンシブ対応を練習中です。</p>
-                </div>
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p class="skill-detail">DOM 操作とイベント処理で、動きのあるページを作れます。</p>
-                </div>
-                <div class="skill-card">
-                    <h3>PHP</h3>
-                    <p class="skill-detail">スパルタキャンプ盛岡 Laravel 編で基礎を学びました。</p>
-                </div>
-            </div>
+
+            <!-- カードの中身は modern.js が作って入れる -->
+            <h3 class="skill-group-title">マークアップ</h3>
+            <div class="skill-list" id="markup-skills"></div>
+
+            <h3 class="skill-group-title">プログラミング</h3>
+            <div class="skill-list" id="program-skills"></div>
+
             <p class="skill-note">カードをクリックすると詳細が開きます。</p>
         </section>
 
@@ -130,8 +120,9 @@
         <p>&copy; 2026 佐藤 祐也</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- modern.js がスキルカードを作るので、script.js より先に読み込む -->
     <script src="modern.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
