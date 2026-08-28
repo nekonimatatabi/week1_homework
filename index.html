@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佐藤 祐也 | プロフィール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ヘッダー：ロゴ・ナビ・ダークモード切替 -->
+    <header class="header" id="home">
+        <p class="logo">YUYA.dev</p>
+        <nav class="nav">
+            <a href="#home">ホーム</a>
+            <a href="#profile">プロフィール</a>
+            <a href="#skills">スキル</a>
+            <a href="#contact">お問い合わせ</a>
+        </nav>
+        <button type="button" id="dark-mode-btn">ダークモード</button>
+    </header>
+
+    <!-- メインビジュアル：背景はCSSのグラデーション -->
+    <section class="hero">
+        <h1>HELLO, I'M 佐藤 祐也</h1>
+        <p>株式会社ねこにまたたび 代表取締役</p>
+        <div class="like-area">
+            <button type="button" id="like-btn">いいね</button>
+            <p class="like-count"><span id="count">0</span> いいね</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- プロフィール -->
+        <section id="profile" class="section">
+            <h2>プロフィール</h2>
+            <div class="profile">
+                <!-- 画像を差し替えるときは images/ の中のファイルを入れ替える -->
+                <img class="profile-image" src="images/image.jpeg" alt="佐藤 祐也のプロフィール写真">
+                <div class="profile-text">
+                    <h3>佐藤 祐也</h3>
+                    <p>
+                        岩手・盛岡を拠点に、EC 運営と Web 制作をしています。<br>
+                        ネットショップの運営歴は約10年。<br>
+                        現在はスパルタキャンプで React を学習中です。
+                    </p>
+                    <p>趣味は猫とスノーボードと読書です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- スキル：カードをクリックすると詳細が開く -->
+        <section id="skills" class="section">
+            <h2>スキル</h2>
+            <div class="skill-list">
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <p class="skill-detail">セマンティックタグを意識してページの構造を組み立てられます。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS</h3>
+                    <p class="skill-detail">Flexbox を使ったレイアウトとレスポンシブ対応を練習中です。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p class="skill-detail">DOM 操作とイベント処理で、動きのあるページを作れます。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>PHP</h3>
+                    <p class="skill-detail">スパルタキャンプ盛岡 Laravel 編で基礎を学びました。</p>
+                </div>
+            </div>
+            <p class="skill-note">カードをクリックすると詳細が開きます。</p>
+        </section>
+
+        <!-- 経歴 -->
+        <section class="section">
+            <h2>これまでの歩み</h2>
+            <div class="table-wrap">
+                <table class="history-table">
+                    <tr>
+                        <th>年</th>
+                        <th>できごと</th>
+                    </tr>
+                    <tr>
+                        <td>2025年</td>
+                        <td>岩手県盛岡市にて「株式会社ねこにまたたび」を創業</td>
+                    </tr>
+                    <tr>
+                        <td>2025年</td>
+                        <td>スパルタキャンプ盛岡 Laravel 編に参加する</td>
+                    </tr>
+                    <tr>
+                        <td>2026年</td>
+                        <td>全日本選手権スノーボードテクニカル大会に参加</td>
+                    </tr>
+                    <tr>
+                        <td>2026年</td>
+                        <td>スパルタキャンプ平泉町 React/Next.js 編に参加</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- お問い合わせフォーム -->
+        <section id="contact" class="section">
+            <h2>お問い合わせ</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="form-row">
+                    <label for="email">メールアドレス</label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div class="form-row">
+                    <label for="message">メッセージ</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                <!-- バリデーションの結果をここに表示する -->
+                <p id="form-message"></p>
+                <button type="submit">送信する</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 佐藤 祐也</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="modern.js"></script>
+</body>
+
+</html>

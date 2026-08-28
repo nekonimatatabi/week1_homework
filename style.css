@@ -1,0 +1,345 @@
+/* 全体のリセット */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fdfdfd;
+}
+
+/* 画像が親要素の幅を超えないようにする */
+img {
+    max-width: 100%;
+}
+
+/* ヘッダー：ロゴ・ナビ・ボタンを横並び（Flexbox 1箇所目） */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 32px;
+    background-color: #b60033;
+    color: #fff;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ナビのリンクを横並び（Flexbox 2箇所目） */
+.nav {
+    display: flex;
+    flex-wrap: wrap;         /* 画面が狭いとき折り返す */
+    justify-content: center;
+    gap: 24px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;   /* リンクの下線を消す */
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* ダークモード切替ボタン */
+#dark-mode-btn {
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #b60033;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#dark-mode-btn:hover {
+    background-color: #ffe0e8;
+}
+
+/* メインビジュアル：背景はグラデーションで作る */
+/* 画像を用意したらここを差し替え（background-image に変更） */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #b60033, #ff7a59);
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.like-area {
+    margin-top: 32px;
+}
+
+#like-btn {
+    padding: 12px 32px;
+    background-color: #fff;
+    color: #b60033;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#like-btn:hover {
+    background-color: #ffe0e8;
+}
+
+.like-count {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* コンテンツ幅を制限して中央寄せ */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    margin-top: 60px;
+}
+
+.section h2 {
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #b60033;
+}
+
+/* プロフィール：画像とテキストを横並び（Flexbox 2箇所目） */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* プロフィール画像を円形に切り抜いて表示する */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 50%;        /* 円形にする */
+    object-fit: cover;         /* 円からはみ出す分は切り取る */
+    border: 4px solid #b60033;
+}
+
+.profile-text h3 {
+    margin-bottom: 8px;
+}
+
+/* スキル一覧：カードを横並び（Flexbox 3箇所目） */
+.skill-list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;   /* 画面が狭いとき折り返す */
+}
+
+.skill-card {
+    flex: 1;
+    min-width: 160px;
+    padding: 24px;
+    text-align: center;
+    background-color: #b60033;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;   /* アニメーション */
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);                 /* マウスを乗せると上に移動 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);   /* 影を追加 */
+}
+
+/* 詳細は最初は非表示。JavaScript で表示を切り替える */
+.skill-detail {
+    display: none;
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.skill-note {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* 経歴の表：狭い画面でははみ出さず横スクロールさせる */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.history-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* 年の列は途中で折り返さない */
+.history-table td:first-child {
+    white-space: nowrap;
+}
+
+.history-table th,
+.history-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #b60033;
+    color: #fff;
+}
+
+/* フォーム */
+.form-row {
+    margin-bottom: 16px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.form-row input,
+.form-row textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+/* バリデーションのメッセージ */
+#form-message {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.error {
+    color: #b60033;
+}
+
+.success {
+    color: #1a7f37;
+}
+
+.contact-form button {
+    padding: 12px 32px;
+    background-color: #b60033;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #8a0027;
+}
+
+/* フッター */
+.footer {
+    margin-top: 80px;
+    padding: 24px;
+    text-align: center;
+    background-color: #b60033;
+    color: #fff;
+}
+
+/* ダークモード用のスタイル */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.dark-mode .skill-note {
+    color: #aaa;
+}
+
+.dark-mode .history-table th,
+.dark-mode .history-table td {
+    border-color: #555;
+}
+
+.dark-mode .form-row input,
+.dark-mode .form-row textarea {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+/* 画面幅が768px以下（タブレット・スマホ）のときに適用 */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;   /* ロゴ・ナビ・ボタンを縦並びにする */
+        padding: 16px 20px;
+    }
+
+    .nav {
+        gap: 16px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .section {
+        margin-top: 40px;
+    }
+
+    .profile {
+        flex-direction: column;   /* スマホでは縦並び */
+        text-align: center;
+    }
+
+    .skill-list {
+        flex-direction: column;   /* スマホでは縦並び */
+    }
+
+    .skill-detail {
+        text-align: center;
+    }
+
+    .contact-form button {
+        width: 100%;              /* ボタンを押しやすく横幅いっぱいに */
+    }
+}
+
+/* 画面幅が480px以下（小さめのスマホ）のときに適用 */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .nav {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .footer {
+        margin-top: 40px;
+    }
+}
