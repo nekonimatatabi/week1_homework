@@ -1,11 +1,9 @@
 name = input("氏名：")
 birth_input = input("生年月日：")
 
-
 name_length = 0
 for char in name:
-
-    if char != " " and char != " " and char != "・":
+    if char.isalnum():
         name_length = name_length + 1
 
 parts = birth_input.split("/")
